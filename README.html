@@ -66,44 +66,49 @@ h2
     color: #00ffcc;
 }
 
-/* Smooth Scrolling Effect */
-html {
+html 
+{
     scroll-behavior: smooth;
 }
 
-.scroll-container {
+.scroll-container 
+{
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
 }
 
-.scroll-content {
+.scroll-content 
+{
     display: flex;
     gap: 20px;
     animation: scroll 20s linear infinite;
 }
 
-.scroll-content img {
-    width: 300px;  /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+.scroll-content img 
+{
+    width: 300px; 
+    height: 200px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes scroll {
+@keyframes scroll 
+{
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Moves half the images for infinite loop */
+    100% { transform: translateX(-50%); } 
 }
 
-.hero-section {
-    background-image: url('8.png'); /* Update path if needed */
+.hero-section 
+{
+    background-image: url('8.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white; /* Ensure text is readable */
+    color: white; 
     text-align: center;
-    padding: 100px 20px; /* Adjust spacing */
+    padding: 100px 20px; 
 }
 
     </style>
@@ -112,8 +117,6 @@ html {
 
     <!-- Navigation -->
     <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 shadow-md navbar">
-
-        
         <div class="flex items-center">
             <img src="iot.png" alt="Hackathon Logo" class="h-12 mr-4">
             <h1 class="text-2xl font-bold">HACK-WITH-IoT</h1>
@@ -124,10 +127,9 @@ html {
             <li><a href="#prizepool" class="scroll-link">Prize Pool</a></li>
             <li><a href="#projects" class="scroll-link">Projects</a></li>
             <li><a href="#faqs" class="scroll-link">FAQs</a></li>
-            <a href="#contact" class="scroll-link">Contact Us</a></li>
+            <li><a href="#contact" class="scroll-link">Contact Us</a></li>
         </ul>
     </nav>
-
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-12">
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
@@ -160,7 +162,7 @@ html {
     <section id="timeline" class="relative py-20 px-6 text-center text-white">
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
-            <source src="back4.mp4" type="video/mp4">
+            <source src="back2(2).mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     
@@ -193,7 +195,7 @@ html {
     <section id="prizepool" class="relative text-white py-12 px-6 overflow-hidden">
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-100">
-            <source src="back2.mp4" type="video/mp4">
+            <source src="back4.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     
