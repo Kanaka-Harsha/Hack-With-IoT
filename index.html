@@ -5,112 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hack With IoT!</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-body 
-{
-    font-family: 'Poppins', sans-serif;
-    background-color: #0a0a0a;
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+        }
+
+        .navbar a {
+            transition: color 0.3s ease-in-out;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            color: #00ffcc;
+            background-color: rgba(0, 255, 204, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+            animation: glowText 1.5s infinite alternate;
+        }
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .scroll-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .scroll-content {
+            display: flex;
+            gap: 20px;
+            animation: scroll 20s linear infinite;
+        }
+
+        .scroll-content img {
+            width: 300px; 
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        .hero-section {
+            background-image: url('8.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; 
+            text-align: center;
+            padding: 100px 20px; 
+        }
+
+        .timer-section {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #countdown {
+    font-size: 2em;
+    font-weight: bold;
     color: #fff;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-
-nav 
-{
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 10px 20px;
-}
-.navbar a 
-{
-    transition: color 0.3s ease-in-out;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-.navbar a:hover, .navbar a.active 
-{
-    color: #00ffcc;
-    background-color: rgba(0, 255, 204, 0.2);
-}
-
-
-h1 
-{
-    font-size: 3.5rem;
-    background: linear-gradient(90deg, #00ffcc, #0077ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
-    animation: glowText 1.5s infinite alternate;
-}
-
-section 
-{
-    padding: 100px 20px;
-    text-align: center;
-    scroll-margin-top: 80px;
-}
-h2 
-{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    color: #00ffcc;
-}
-
-html 
-{
-    scroll-behavior: smooth;
-}
-
-.scroll-container 
-{
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-
-.scroll-content 
-{
-    display: flex;
-    gap: 20px;
-    animation: scroll 20s linear infinite;
-}
-
-.scroll-content img 
-{
-    width: 300px; 
-    height: 200px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    position: relative; /* Ensure it can be positioned */
+    z-index: 10; /* Ensure it is above the video */
 }
-
-@keyframes scroll 
-{
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } 
-}
-
-.hero-section 
-{
-    background-image: url('8.png'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white; 
-    text-align: center;
-    padding: 100px 20px; 
-}
-
     </style>
 </head>
 <body class="bg-gray-900 text-white">
@@ -130,6 +137,7 @@ html
             <li><a href="#contact" class="scroll-link">Contact Us</a></li>
         </ul>
     </nav>
+
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-12">
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
@@ -148,9 +156,40 @@ html
                 Register Now
             </button>
         </div>
-    </section>
+        <h1 class="text-4xl font-bold mb-4">Countdown to Event</h1>
+        <div id="countdown" class="bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg shadow-lg"></div>
     
-
+        <script>
+            // Set the event date (10 days from now)
+            const eventDate = new Date();
+            eventDate.setDate(eventDate.getDate() + 10);
+    
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = eventDate - now;
+    
+                if (timeLeft <= 0) {
+                    document.getElementById("countdown").innerHTML = "Event Started!";
+                    clearInterval(timer);
+                    return;
+                }
+    
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+                document.getElementById("countdown").innerHTML = 
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+    
+            // Update the countdown every second
+            const timer = setInterval(updateCountdown, 1000);
+    
+            // Initial call to display countdown immediately
+            updateCountdown();
+        </script>
+    </section>
 
     <!-- About Us Section -->
     <section id="about" class="bg-gray-900">
@@ -188,8 +227,6 @@ html
             </div>
         </div>
     </section>
-    
-
 
     <!-- Prize Pool -->
     <section id="prizepool" class="relative text-white py-12 px-6 overflow-hidden">
@@ -241,8 +278,6 @@ html
         </div>
     </section>
     
-    
-
     <!-- Projects Section -->
     <section id="projects" class="bg-gray-800 text-white p-8 overflow-hidden">
         <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
@@ -266,200 +301,213 @@ html
         </div>
     </section>
     
-    
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 px-6 text-center bg-gray-900">
+        <style>
+            /* FAQ Section Styling */
+            #faqs {
+                font-family: 'Poppins', sans-serif;
+                background-color: #0f0f10;
+                padding: 80px 20px;
+                text-align: center;
+            }
+            /* Paste the CSS here */
+            #faqs h2 {
+                font-size: 2.8rem;
+                font-weight: 700;
+                color: #ffffff;
+                text-align: center;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+                padding-bottom: 10px;
+            }
 
-<!-- FAQs Section -->
-<section id="faqs" class="py-20 px-6 text-center bg-gray-900">
-    <style>
-        /* FAQ Section Styling */
-        #faqs {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0f0f10;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        /* Paste the CSS here */
-        #faqs h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
+            /* Underline Effect */
+            #faqs h2::after {
+                content: "";
+                width: 60px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff8c00, #ff3d00);
+                display: block;
+                margin: 8px auto 0;
+                border-radius: 2px;
+            }
 
-        /* Underline Effect */
-        #faqs h2::after {
-            content: "";
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff8c00, #ff3d00);
-            display: block;
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
+            /* Subtext */
+            #faqs p {
+                font-size: 1.2rem;
+                color: #b3b3b3;
+                text-align: center;
+                margin-top: 5px;
+            }
 
-        /* Subtext */
-        #faqs p {
-            font-size: 1.2rem;
-            color: #b3b3b3;
-            text-align: center;
-            margin-top: 5px;
-        }
+            #faqs p {
+                font-size: 1.1rem;
+                color: #b3b3b3;
+            }
 
-        #faqs p {
-            font-size: 1.1rem;
-            color: #b3b3b3;
-        }
+            /* FAQ Container */
+            .faq-container {
+                max-width: 800px;
+                margin: 40px auto;
+            }
 
-        /* FAQ Container */
-        .faq-container {
-            max-width: 800px;
-            margin: 40px auto;
-        }
+            .faq-item {
+                background: linear-gradient(135deg, #222831, #1a1d25);
+                border-radius: 10px;
+                padding: 18px;
+                margin-bottom: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
 
-   
-        .faq-item {
-            background: linear-gradient(135deg, #222831, #1a1d25);
-            border-radius: 10px;
-            padding: 18px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
+            .faq-item:hover {
+                transform: scale(1.02);
+                box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
+            }
 
-        .faq-item:hover 
-        {
-            transform: scale(1.02);
-            box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
-        }
+            .faq-item .faq-question {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #ffffff;
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
 
-        .faq-item .faq-question 
-        {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #ffffff;
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
+            .faq-item .icon {
+                font-size: 1.5rem;
+                color: #b3b3b3;
+                transition: transform 0.3s ease-in-out;
+            }
 
+            .faq-item .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                font-size: 1rem;
+                color: #d1d1d1;
+                line-height: 1.5;
+                transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+                padding: 0px 18px;
+            }
 
-        .faq-item .icon 
-        {
-            font-size: 1.5rem;
-            color: #b3b3b3;
-            transition: transform 0.3s ease-in-out;
-        }
+            .faq-item.active .faq-answer {
+                max-height: 200px;
+                padding: 10px 18px;
+            }
 
+            .faq-item.active .icon {
+                transform: rotate(45deg);
+            }
 
-        .faq-item .faq-answer 
-        {
-            max-height: 0;
-            overflow: hidden;
-            font-size: 1rem;
-            color: #d1d1d1;
-            line-height: 1.5;
-            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-            padding: 0px 18px;
-        }
+            .faq-item .faq-question {
+                font-size: 1.4rem; 
+                font-weight: 600;
+                color: #f1f1f1;
+            }
 
+            .social-container-unique {
+                background-color: #222831;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 10vh; /* Center vertically on the screen */
+                padding-bottom: 10px;
+            }
 
-        .faq-item.active .faq-answer 
-        {
-            max-height: 200px;
-            padding: 10px 18px;
-        }
+            .social-link {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-size: 25px;
+                margin: 1px;
+            }
 
-        .faq-item.active .icon 
-        {
-            transform: rotate(45deg);
-        }
+            .social-link i {
+                margin-right: 8px; /* Space between icon and text */
+            }
 
-    .faq-item .faq-question 
-    {
-    font-size: 1.4rem; 
-    font-weight: 600;
-    color: #f1f1f1;
-    }
+            .instagram {
+                color: #E4405F;
+            }
 
-   
+            .linkedin {
+                color: #0077B5;
+            }
+        </style>
 
-    </style>
+        <h3 class="text-4xl font-bold mb-6 text-white">Do You Have any questions about Hack With IoT?</h3>
+        <p class="text-lg text-gray-400">Get to know what our audience is concerned about</p>
 
-    <h3 class="text-4xl font-bold mb-6 text-white">Do You Have any questions about Hack With IoT?</h3>
-    <p class="text-lg text-gray-400">Get to know what our audience is concerned about</p>
-
-    <div class="mt-12 max-w-3xl mx-auto space-y-4">
-        <!-- FAQ Items -->
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>Can I cancel my participation before Hack With IoT begins?</p>
-                <span class="icon">+</span>
+        <div class="mt-12 max-w-3xl mx-auto space-y-4">
+            <!-- FAQ Items -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>Can I cancel my participation before Hack With IoT begins?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">Cancellation is not allowed, but you can transfer your registration to another participant.</div>
             </div>
-            <div class="faq-answer">Cancellation is not allowed, but you can transfer your registration to another participant.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>What is Hack With IoT 2025?</p>
-                <span class="icon">+</span>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>What is Hack With IoT 2025?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">Hack With IoT 2025 is a technology and innovation event featuring hackathons, workshops, and networking opportunities for tech enthusiasts.</div>
             </div>
-            <div class="faq-answer">Hack With IoT 2025 is a technology and innovation event featuring hackathons, workshops, and networking opportunities for tech enthusiasts.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>Who can participate in Hack With IoT?</p>
-                <span class="icon">+</span>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>Who can participate in Hack With IoT?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">Students, professionals, and tech enthusiasts from all backgrounds can participate.</div>
             </div>
-            <div class="faq-answer">Students, professionals, and tech enthusiasts from all backgrounds can participate.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>What topics will be covered in the workshops?</p>
-                <span class="icon">+</span>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>What topics will be covered in the workshops?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">Workshops will cover web development, AI, cybersecurity, blockchain, and other emerging tech trends.</div>
             </div>
-            <div class="faq-answer">Workshops will cover web development, AI, cybersecurity, blockchain, and other emerging tech trends.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>What is the prize pool for the hackathon?</p>
-                <span class="icon">+</span>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>What is the prize pool for the hackathon?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">The hackathon offers cash prizes, internships, and goodies for winners.</div>
             </div>
-            <div class="faq-answer">The hackathon offers cash prizes, internships, and goodies for winners.</div>
-        </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <p>Do I need a team to participate in the hackathon?</p>
-                <span class="icon">+</span>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <p>Do I need a team to participate in the hackathon?</p>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">You can participate solo or in a team. Teams can be formed before or during the event.</div>
             </div>
-            <div class="faq-answer">You can participate solo or in a team. Teams can be formed before or during the event.</div>
         </div>
-    </div>
-</section>
+    </section>
 
-<script>
-    document.querySelectorAll(".faq-item").forEach(item => {
-        item.addEventListener("click", () => {
-            // Toggle active class
-            item.classList.toggle("active");
+    <script>
+        document.querySelectorAll(".faq-item").forEach(item => {
+            item.addEventListener("click", () => {
+                // Toggle active class
+                item.classList.toggle("active");
 
-            // Close other open FAQs
-            document.querySelectorAll(".faq-item").forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains("active")) {
-                    otherItem.classList.remove("active");
-                }
+                // Close other open FAQs
+                document.querySelectorAll(".faq-item").forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains("active")) {
+                        otherItem.classList.remove("active");
+                    }
+                });
             });
         });
-    });
-</script>
-
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-800">
@@ -472,6 +520,16 @@ html
         </form>
     </section>
 
+    <div class="social-container-unique">
+        <a href="https://www.instagram.com/kl_iot?igsh=eW12Zndpa3N3eXMx" target="_blank" class="social-link instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram Profile
+        </a>
+    
+        <a href="https://www.linkedin.com/in/iot-klef-843b81294/" target="_blank" class="social-link linkedin">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+        </a>
+    </div>
+
     <!-- Footer -->
     <footer class="text-center py-6 bg-gray-800">
         <p>&copy; 2025 Hack-With-IoT. All Rights Reserved.</p>
@@ -479,8 +537,7 @@ html
 
     <!-- Smooth Scroll JavaScript -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() 
-        {
+        document.addEventListener("DOMContentLoaded", function() {
             const scrollLinks = document.querySelectorAll(".scroll-link");
 
             scrollLinks.forEach(link => {
@@ -499,8 +556,7 @@ html
             });
         });
 
-        function scrollToSection(id) 
-        {
+        function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({
                 behavior: "smooth",
                 block: "start"
