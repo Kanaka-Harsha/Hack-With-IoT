@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* General Styling */
-        body {
+        body 
+        {
             font-family: 'Poppins', sans-serif;
             background-color: #0a0a0a;
             color: #fff;
@@ -17,7 +18,8 @@
         }
 
         /* Navigation */
-        nav {
+        nav 
+        {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             position: fixed;
@@ -27,17 +29,21 @@
             z-index: 1000;
             padding: 10px 20px;
         }
-        .navbar a {
+        .navbar a 
+        {
             transition: color 0.3s ease-in-out;
             padding: 8px 12px;
             border-radius: 5px;
         }
-        .navbar a:hover, .navbar a.active {
+        .navbar a:hover, .navbar a.active 
+        {
             color: #00ffcc;
             background-color: rgba(0, 255, 204, 0.2);
         }
 
-        h1 {
+        
+        h1 
+        {
             font-size: 3.5rem;
             background: linear-gradient(90deg, #00ffcc, #0077ff);
             -webkit-background-clip: text;
@@ -47,12 +53,15 @@
             animation: glowText 1.5s infinite alternate;
         }
 
-        section {
+        
+        section 
+        {
             padding: 100px 20px;
             text-align: center;
             scroll-margin-top: 80px;
         }
-        h2 {
+        h2 
+        {
             font-size: 2.5rem;
             text-transform: uppercase;
             margin-bottom: 20px;
@@ -60,31 +69,35 @@
         }
 
         /* Scrolling Image Wrapper */
-        .scroll-container {
+        .scroll-container 
+        {
             width: 100%;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
         }
-        .scroll-content {
+        .scroll-content 
+        {
             display: flex;
             gap: 20px;
             animation: scroll 20s linear infinite;
         }
-        .scroll-content img {
-            width: 100%; /* Make images responsive */
-            max-width: 300px; /* Limit max width */
-            height: auto; /* Maintain aspect ratio */
+        .scroll-content img 
+        {
+            width: 300px; 
+            height: 200px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes scroll {
+        @keyframes scroll 
+        {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); } 
         }
 
-        .faq-item {
+        .faq-item 
+        {
             background: linear-gradient(135deg, #222831, #1a1d25);
             border-radius: 10px;
             padding: 18px;
@@ -92,11 +105,13 @@
             cursor: pointer;
             transition: all 0.3s ease-in-out;
         }
-        .faq-item:hover {
+        .faq-item:hover 
+        {
             transform: scale(1.02);
             box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
         }
-        .faq-item .faq-question {
+        .faq-item .faq-question 
+        {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -104,11 +119,14 @@
             font-size: 1.2rem;
             font-weight: 500;
         }
-        .faq-item .icon {
-            font-size: 1.5rem color: #b3b3b3;
+        .faq-item .icon 
+        {
+            font-size: 1.5rem;
+            color: #b3b3b3;
             transition: transform 0.3s ease-in-out;
         }
-        .faq-item .faq-answer {
+        .faq-item .faq-answer 
+        {
             max-height: 0;
             overflow: hidden;
             font-size: 1rem;
@@ -117,28 +135,120 @@
             transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
             padding: 0px 18px;
         }
-        .faq-item.active .faq-answer {
+        .faq-item.active .faq-answer 
+        {
             max-height: 200px;
             padding: 10px 18px;
         }
-        .faq-item.active .icon {
+        .faq-item.active .icon 
+        {
             transform: rotate(45deg);
         }
 
-        .contact-box {
+        .contact-box 
+        {
             border: 1px solid #ccc;
             padding: 20px;
             margin: 10px;
-            width: 100%; /* Make contact boxes responsive */
-            max-width: 300px; /* Limit max width */
+            width: 30%;
+            float: left;
             background-color: #1a1a1a;
-            transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .contact-box:hover {
+        .contact-box:hover 
+        {
             background: linear-gradient(90deg, #00ffcc, #0077ff);
             transform: translateY(-5px);
         }
-        .container {
+        .container 
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+
+        #sponsors 
+        {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #sponsors h2
+        {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 30px;
+        }
+        .sponsor-box 
+        {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffcc;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .sponsor-box:hover 
+        {
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            transform: translateY(-5px);
+        }
+        .sponsor-info 
+        {
+            display: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+        .sponsor-box.active .sponsor-info 
+        {
+            display: block;
+        }
+
+        .social-container-unique 
+        {
+            background-color: #222831;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            padding-bottom: 10px;
+        }
+        .social-link 
+        {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 1px;
+        }
+        .social-link i 
+        {
+            margin-right: 8px;
+        }
+        .instagram 
+        {
+            color: #E4405F;
+        }
+        .linkedin 
+        {
+            color: #0077B5;
+        }
+
+        .contact-box 
+        {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px;
+        width: 30%;
+        float: left;
+        background-color: #1a1a1a;
+        }
+
+
+        .container 
+        {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -149,89 +259,371 @@
             min-height: 10vh;
         }
 
-        .contacttt h2 {
+        .contacttt h2
+        {
             font-size: 30px;
             font-weight: bold;
             color: #00ffcc;
             margin-bottom: 20px;
         } 
-        .contact-box h3 {
+        .contact-box h3 
+        {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
             color: #ffcc00;
         }
 
-        .contact-box p {
+        .contact-box p 
+        {
             margin: 5px 0;
             font-size: 14px;
             color: #dddddd;
         }
 
-        .timer-section {
+        .contact-box:hover 
+        {
+            transform: scale(1.05); /* Slight zoom */
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .timer-section 
+        {
             text-align: center;
             font-size: 24px;
             margin-top: 30px;
             font-weight: bold;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding-top:10px;
+            padding-bottom:10px
         }
 
-        #countdown {
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            color: #fff;
-            background: linear-gradient(135deg, rgb(134, 201, 240), rgb(97, 242, 179));
-            padding: 25px;
-            border-radius: 20px;
-            display: inline-block;
-            position: relative;
-            z-index: 20; 
+        #countdown 
+        {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, rgb(134, 201, 240),rgb(97, 242, 179)); /* Semi-transparent background */
+        padding: 25px;
+        border-radius: 20px;
+        display: inline-block;
+        position: relative;
+        z-index: 20; 
         }
+
+
+
+
 
         @media (max-width: 768px) 
         {
-            h1 
-            {
-                font-size: 2.5rem; /* Adjust font size for smaller screens */
-            }
-            h2 
-            {
-                font-size: 2rem; /* Adjust font size for smaller screens */
-            }
-            .contact-box 
-            {
-                width: 100%; /* Full width on smaller screens */
-                max-width: none; /* Remove max width */
-            }
-            .scroll-content img 
-            {
-                max-width: 100%; /* Ensure images fit within their container */
-            }
+            body 
+        {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-            /* Navigation */
-            nav 
-            {
-                background: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(10px);
-                position: fixed;
-                width: 100%;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-                padding: 10px 20px;
-            }
-            .navbar a 
-            {
-                transition: color 0.3s ease-in-out;
-                padding: 8px 1px;
-                border-radius: 1px;
-            }
-            .navbar a:hover, .navbar a.active {
-                color: #00ffcc;
-                background-color: rgba(0, 255, 204, 0.2);
-            }
+        /* Navigation */
+        nav 
+        {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 1px 2px;
+        }
+        .navbar a 
+        {
+            transition: color 0.3s ease-in-out;
+            padding: 1px 1px;
+            border-radius: 1px;
+        }
+        .navbar a:hover, .navbar a.active 
+        {
+            color: #00ffcc;
+            background-color: rgba(0, 255, 204, 0.2);
+        }
+
+
+        
+        h1 
+        {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+            animation: glowText 1.5s infinite alternate;
+        }
+
+        
+        section 
+        {
+            padding: 100px 20px;
+            text-align: center;
+            scroll-margin-top: 80px;
+        }
+        h2 
+        {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+
+        /* Scrolling Image Wrapper */
+        .scroll-container 
+        {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .scroll-content 
+        {
+            display: flex;
+            gap: 20px;
+            animation: scroll 20s linear infinite;
+        }
+        .scroll-content img 
+        {
+            width: 300px; 
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scroll 
+        {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+        }
+
+        .faq-item 
+        {
+            background: linear-gradient(135deg, #222831, #1a1d25);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .faq-item:hover 
+        {
+            transform: scale(1.02);
+            box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
+        }
+        .faq-item .faq-question 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .faq-item .icon 
+        {
+            font-size: 1.5rem;
+            color: #b3b3b3;
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-item .faq-answer 
+        {
+            max-height: 0;
+            overflow: hidden;
+            font-size: 1rem;
+            color: #d1d1d1;
+            line-height: 1.5;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+            padding: 0px 18px;
+        }
+        .faq-item.active .faq-answer 
+        {
+            max-height: 200px;
+            padding: 10px 18px;
+        }
+        .faq-item.active .icon 
+        {
+            transform: rotate(45deg);
+        }
+
+        .contact-box 
+        {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            float: left;
+            background-color: #1a1a1a;
+        }
+        .contact-box:hover 
+        {
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            transform: translateY(-5px);
+        }
+        .container 
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+
+        #sponsors 
+        {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #sponsors h2
+        {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 30px;
+        }
+        .sponsor-box 
+        {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffcc;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .sponsor-box:hover 
+        {
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            transform: translateY(-5px);
+        }
+        .sponsor-info 
+        {
+            display: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+        .sponsor-box.active .sponsor-info 
+        {
+            display: block;
+        }
+
+        .social-container-unique 
+        {
+            background-color: #222831;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            padding-bottom: 10px;
+        }
+        .social-link 
+        {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 1px;
+        }
+        .social-link i 
+        {
+            margin-right: 8px;
+        }
+        .instagram 
+        {
+            color: #E4405F;
+        }
+        .linkedin 
+        {
+            color: #0077B5;
+        }
+
+        .contact-box 
+        {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px;
+        width: 30%;
+        float: left;
+        background-color: #1a1a1a;
+        }
+
+
+        .container 
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            background: #0d0d0d; 
+            min-height: 10vh;
+        }
+
+        .contacttt h2
+        {
+            font-size: 30px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 20px;
+        } 
+        .contact-box h3 
+        {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .contact-box p 
+        {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #dddddd;
+        }
+
+        .contact-box:hover 
+        {
+            transform: scale(1.05); /* Slight zoom */
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .timer-section 
+        {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 30px;
+            font-weight: bold;
+            padding-top:10px;
+            padding-bottom:10px
+        }
+
+        #countdown 
+        {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, rgb(134, 201, 240),rgb(97, 242, 179)); /* Semi-transparent background */
+        padding: 25px;
+        border-radius: 20px;
+        display: inline-block;
+        position: relative;
+        z-index: 20; 
+        }
 
         }
     </style>
@@ -247,8 +639,8 @@
     <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 shadow-md navbar">
         <div class="flex items-center">
             <img src="iot.png" alt="Hackathon Logo" class="h-12 mr-4">
-            <h1 class="text-2xl font-bold">HACK-WITH-IoT</h1>
-        </div>
+            <h1 class="text-2xl font-bold md:text-2xl sm:text-base xs:text-base text-center">HACK-WITH-IoT</h1>
+        </div> 
         <ul class="flex space-x-6">
             <li><a href="#about" class="scroll-link">About Us</a></li>
             <li><a href="#timeline" class="scroll-link">Timeline</a></li>
@@ -267,6 +659,7 @@
         </video>
         <div class="relative max-w-3xl z-10 text-white">
             <h1 class="text-8xl font-extrabold mb-4 drop-shadow-lg">Build. Innovate. Compete.</h1>
+             <!-- Moved countdown here -->
             <p class="text-2xl drop-shadow-md">
                 Join the IoT Hackathon to develop smart, connected solutions in smart cities, healthcare, automation, and AI-driven IoT and win big!
             </p>
@@ -279,34 +672,37 @@
             <div id="countdown" class="bg-gray-800 bg-opacity-85 text-white p-4 rounded-lg shadow-lg mb-6"></div>
         </div>
     </section>
-
-    <script>
-        // Set the event date (15 days from now)
-        const eventDate = new Date();
-        eventDate.setDate(eventDate.getDate() + 15);
-
-        function updateCountdown() {
-            const now = new Date();
-            const timeLeft = eventDate - now;
-
-            if (timeLeft <= 0) {
-                document.getElementById("countdown").innerHTML = "Event Started!";
-                clearInterval(timer);
-                return;
+    
+    
+        <script>
+            // Set the event date (10 days from now)
+            const eventDate = new Date();
+            eventDate.setDate(eventDate.getDate() + 15);
+    
+            function updateCountdown() {
+                const now = new Date();
+                const timeLeft = eventDate - now;
+    
+                if (timeLeft <= 0) {
+                    document.getElementById("countdown").innerHTML = "Event Started!";
+                    clearInterval(timer);
+                    return;
+                }
+    
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+                document.getElementById("countdown").innerHTML = 
+                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
+    
+            const timer = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        const timer = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+    
 
     <!-- About Us Section -->
     <section id="about" class="bg-gray-900">
@@ -412,7 +808,7 @@
     <section id="projects" class="bg-gray-800 text-white p-8 overflow-hidden">
         <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
         <p class="text-lg text-center mb-8">Explore innovative projects from previous hackathons.</p>
-        <div class ="scroll-container">
+        <div class="scroll-container">
             <div class="scroll-content">
                 <img src="1.jpg" alt="Project 1">
                 <img src="3.jpg" alt="Project 2">
@@ -421,6 +817,7 @@
                 <img src="8.jpg" alt="Project 6">
                 <img src="9.jpg" alt="Project 7">
                 <img src="2.jpg" alt="Project 8">
+
                 <img src="1.jpg" alt="Project 1">
                 <img src="2.jpg" alt="Project 2">
                 <img src="3.jpg" alt="Project 3">
@@ -491,32 +888,40 @@
         });
     </script>
 
-    <section>
-        <div class="contacttt">
-            <h2>Person Contact</h2>
-        </div>
+<section>
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle("active");
+        }
+    </script>
 
-        <div class="container">
-            <div class="contact-box">
-                <h3>Lead</h3>
-                <p><strong>Name:</strong> M.Varnini</p>
-                <p><strong>Email:</strong> 2200100057@kluniversity.in</p>
-                <p><strong>Contact:</strong></p>
-            </div>
-            <div class="contact-box">
-                <h3>Co-Lead 1</h3>
-                <p><strong>Name:</strong> Koppada Udaya Sai</p>
-                <p><strong>Email:</strong> 2200100018@kluniversity.in</p>
-                <p><strong>Contact:</strong> +91 9393099930</p>
-            </div>
-            <div class="contact-box">
-                <h3>Co-Lead 2</h3>
-                <p><strong>Name:</strong> B. Yogendra Varma</p>
-                <p><strong>Email:</strong> 2300100051@kluniversity.in</p>
-                <p><strong>Contact:</strong> +91 8977294942</p>
-            </div>
+    <div class="contacttt">
+    <h2>Person Contact</h2>
+</div>
+
+    <div class="container">
+        <div class="contact-box">
+            
+            <h3>Lead</h3>
+            <p><strong>Name:</strong> M.Varnini</p>
+            <p><strong>Email:</strong> 2200100057@kluniversity.in</p>
+            <p><strong>Contact:</strong></p>
         </div>
-    </section>
+        <div class="contact-box">
+            <h3>Co-Lead 1</h3>
+            <p><strong>Name:</strong> Koppada Udaya Sai</p>
+            <p><strong>Email:</strong> 2200100018@kluniversity.in</p>
+            <p><strong>Contact:</strong>+91 9393099930</p>
+        </div>
+        <div class="contact-box">
+            <h3>Co-Lead 2</h3>
+            <p><strong>Name:</strong> B. Yogendra Varma</p>
+            <p><strong>Email:</strong> 2300100051@kluniversity.in</p>
+            <p><strong>Contact:</strong> +91 8977294942</p>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-800">
