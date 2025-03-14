@@ -190,20 +190,49 @@
             z-index: 20; 
         }
 
-        @media (max-width: 768px) {
-            h1 {
+        @media (max-width: 768px) 
+        {
+            h1 
+            {
                 font-size: 2.5rem; /* Adjust font size for smaller screens */
             }
-            h2 {
+            h2 
+            {
                 font-size: 2rem; /* Adjust font size for smaller screens */
             }
-            .contact-box {
+            .contact-box 
+            {
                 width: 100%; /* Full width on smaller screens */
                 max-width: none; /* Remove max width */
             }
-            .scroll-content img {
+            .scroll-content img 
+            {
                 max-width: 100%; /* Ensure images fit within their container */
             }
+
+            /* Navigation */
+            nav 
+            {
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                padding: 10px 20px;
+            }
+            .navbar a 
+            {
+                transition: color 0.3s ease-in-out;
+                padding: 8px 1px;
+                border-radius: 1px;
+            }
+            .navbar a:hover, .navbar a.active {
+                color: #00ffcc;
+                background-color: rgba(0, 255, 204, 0.2);
+            }
+
         }
     </style>
 </head>
