@@ -6,9 +6,10 @@
     <title>Hack With IoT!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
     <style>
-        body {
+        /* General Styling */
+        body 
+        {
             font-family: 'Poppins', sans-serif;
             background-color: #0a0a0a;
             color: #fff;
@@ -16,7 +17,9 @@
             scroll-behavior: smooth;
         }
 
-        nav {
+        /* Navigation */
+        nav 
+        {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             position: fixed;
@@ -26,19 +29,21 @@
             z-index: 1000;
             padding: 10px 20px;
         }
-
-        .navbar a {
+        .navbar a 
+        {
             transition: color 0.3s ease-in-out;
             padding: 8px 12px;
             border-radius: 5px;
         }
-
-        .navbar a:hover, .navbar a.active {
+        .navbar a:hover, .navbar a.active 
+        {
             color: #00ffcc;
             background-color: rgba(0, 255, 204, 0.2);
         }
 
-        h1 {
+        
+        h1 
+        {
             font-size: 3.5rem;
             background: linear-gradient(90deg, #00ffcc, #0077ff);
             -webkit-background-clip: text;
@@ -48,79 +53,273 @@
             animation: glowText 1.5s infinite alternate;
         }
 
-        section {
+        
+        section 
+        {
             padding: 100px 20px;
             text-align: center;
             scroll-margin-top: 80px;
         }
-
-        h2 {
+        h2 
+        {
             font-size: 2.5rem;
             text-transform: uppercase;
             margin-bottom: 20px;
             color: #00ffcc;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .scroll-container {
+        /* Scrolling Image Wrapper */
+        .scroll-container 
+        {
             width: 100%;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
         }
-
-        .scroll-content {
+        .scroll-content 
+        {
             display: flex;
             gap: 20px;
             animation: scroll 20s linear infinite;
         }
-
-        .scroll-content img {
+        .scroll-content img 
+        {
             width: 300px; 
             height: 200px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes scroll {
+        @keyframes scroll 
+        {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); } 
         }
 
-        .hero-section {
-            background-image: url('8.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white; 
-            text-align: center;
-            padding: 100px 20px; 
+        .faq-item 
+        {
+            background: linear-gradient(135deg, #222831, #1a1d25);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .faq-item:hover 
+        {
+            transform: scale(1.02);
+            box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
+        }
+        .faq-item .faq-question 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .faq-item .icon 
+        {
+            font-size: 1.5rem;
+            color: #b3b3b3;
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-item .faq-answer 
+        {
+            max-height: 0;
+            overflow: hidden;
+            font-size: 1rem;
+            color: #d1d1d1;
+            line-height: 1.5;
+            transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+            padding: 0px 18px;
+        }
+        .faq-item.active .faq-answer 
+        {
+            max-height: 200px;
+            padding: 10px 18px;
+        }
+        .faq-item.active .icon 
+        {
+            transform: rotate(45deg);
         }
 
-        .timer-section {
+        .contact-box 
+        {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            float: left;
+            background-color: #1a1a1a;
+        }
+        .contact-box:hover 
+        {
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            transform: translateY(-5px);
+        }
+        .container 
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+
+        #sponsors 
+        {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #sponsors h2
+        {
+            font-size: 40px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 30px;
+        }
+        .sponsor-box 
+        {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ffcc;
+            border-radius: 30px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .sponsor-box:hover 
+        {
+            background: linear-gradient(90deg, #00ffcc, #0077ff);
+            transform: translateY(-5px);
+        }
+        .sponsor-info 
+        {
+            display: none;
+            margin-top: 10px;
+            color: #fff;
+        }
+        .sponsor-box.active .sponsor-info 
+        {
+            display: block;
+        }
+
+        .social-container-unique 
+        {
+            background-color: #222831;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            padding-bottom: 10px;
+        }
+        .social-link 
+        {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 1px;
+        }
+        .social-link i 
+        {
+            margin-right: 8px;
+        }
+        .instagram 
+        {
+            color: #E4405F;
+        }
+        .linkedin 
+        {
+            color: #0077B5;
+        }
+
+        .contact-box 
+        {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px;
+        width: 30%;
+        float: left;
+        background-color: #1a1a1a;
+        }
+
+
+        .container 
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            background: #0d0d0d; 
+            min-height: 10vh;
+        }
+
+        .contacttt h2
+        {
+            font-size: 30px;
+            font-weight: bold;
+            color: #00ffcc;
+            margin-bottom: 20px;
+        } 
+        .contact-box h3 
+        {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+
+        .contact-box p 
+        {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #dddddd;
+        }
+
+        .contact-box:hover 
+        {
+            transform: scale(1.05); /* Slight zoom */
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .timer-section 
+        {
             text-align: center;
             font-size: 24px;
-            margin-top: 20px;
+            margin-top: 30px;
             font-weight: bold;
+            padding-top:10px;
+            padding-bottom:10px
         }
 
-        #countdown {
-    font-size: 2em;
-    font-weight: bold;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    position: relative; /* Ensure it can be positioned */
-    z-index: 10; /* Ensure it is above the video */
-}
+        #countdown 
+        {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(135deg, rgb(134, 201, 240),rgb(97, 242, 179)); /* Semi-transparent background */
+        padding: 25px;
+        border-radius: 20px;
+        display: inline-block;
+        position: relative;
+        z-index: 20; 
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body>
+
+    <audio autoplay loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <!-- Navigation -->
     <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 shadow-md navbar">
@@ -138,16 +337,15 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-12">
-        <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="back5.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    
-        <!-- Content -->
         <div class="relative max-w-3xl z-10 text-white">
             <h1 class="text-8xl font-extrabold mb-4 drop-shadow-lg">Build. Innovate. Compete.</h1>
+             <!-- Moved countdown here -->
             <p class="text-2xl drop-shadow-md">
                 Join the IoT Hackathon to develop smart, connected solutions in smart cities, healthcare, automation, and AI-driven IoT and win big!
             </p>
@@ -155,9 +353,12 @@
                 class="mt-6 px-8 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition">
                 Register Now
             </button>
+            <br>
+            <br>
+            <div id="countdown" class="bg-gray-800 bg-opacity-85 text-white p-4 rounded-lg shadow-lg mb-6"></div>
         </div>
-        <h1 class="text-4xl font-bold mb-4">Countdown to Event</h1>
-        <div id="countdown" class="bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg shadow-lg"></div>
+    </section>
+    
     
         <script>
             // Set the event date (10 days from now)
@@ -183,13 +384,11 @@
                     `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
     
-            // Update the countdown every second
             const timer = setInterval(updateCountdown, 1000);
-    
-            // Initial call to display countdown immediately
             updateCountdown();
         </script>
-    </section>
+
+    
 
     <!-- About Us Section -->
     <section id="about" class="bg-gray-900">
@@ -199,16 +398,11 @@
 
     <!-- Timeline -->
     <section id="timeline" class="relative py-20 px-6 text-center text-white">
-        <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="back2(2).mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    
-        <!-- Overlay to Improve Text Visibility -->
         <div class="absolute inset-0 bg-white bg-opacity-50"></div>
-    
-        <!-- Content -->
         <div class="relative z-10 max-w-4xl mx-auto">
             <h2 class="text-4xl font-bold mb-6">Timeline</h2>
             <div class="space-y-8">
@@ -230,16 +424,11 @@
 
     <!-- Prize Pool -->
     <section id="prizepool" class="relative text-white py-12 px-6 overflow-hidden">
-        <!-- Background Video -->
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-100">
             <source src="back4.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    
-        <!-- Overlay for readability -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    
-        <!-- Content -->
         <div class="relative z-10">
             <h2 class="text-4xl font-bold text-center mb-6 text-cyan-400">Prize Pool</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -277,13 +466,34 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Sponsors Section -->
+    <section id="sponsors">
+        <h2>Sponsors</h2>
+        <div class="sponsor-box" onclick="toggleInfo(this)">
+            <div class="sponsor-name"><strong>John Doe</strong> - Tech Innovators Inc.</div>
+            <div class="sponsor-info">John Doe is the CEO of Tech Innovators Inc. and has over 20 years of experience in the technology sector.</div>
+        </div>
+        <div class="sponsor-box" onclick="toggleInfo(this)">
+            <div class="sponsor-name"><strong>Jane Smith</strong> - Future Solutions Ltd.</div>
+            <div class="sponsor-info">Jane Smith is the founder of Future Solutions Ltd., a leading firm in renewable energy solutions.</div>
+        </div>
+        <div class="sponsor-box" onclick="toggleInfo(this)">
+            <div class="sponsor-name"><strong>Michael Brown</strong> - Smart Devices Co.</div>
+            <div class="sponsor-info">Michael Brown is the CTO of Smart Devices Co., which specializes in innovative smart home technology.</div>
+        </div>
+    </section>
+
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+
     <!-- Projects Section -->
     <section id="projects" class="bg-gray-800 text-white p-8 overflow-hidden">
         <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
         <p class="text-lg text-center mb-8">Explore innovative projects from previous hackathons.</p>
-    
-        <!-- Scrolling Image Wrapper -->
         <div class="scroll-container">
             <div class="scroll-content">
                 <img src="1.jpg" alt="Project 1">
@@ -293,156 +503,19 @@
                 <img src="8.jpg" alt="Project 6">
                 <img src="9.jpg" alt="Project 7">
                 <img src="2.jpg" alt="Project 8">
-                <!-- Duplicate images for infinite loop effect -->
+
                 <img src="1.jpg" alt="Project 1">
                 <img src="2.jpg" alt="Project 2">
                 <img src="3.jpg" alt="Project 3">
             </div>
         </div>
     </section>
-    
+
     <!-- FAQs Section -->
     <section id="faqs" class="py-20 px-6 text-center bg-gray-900">
-        <style>
-            /* FAQ Section Styling */
-            #faqs {
-                font-family: 'Poppins', sans-serif;
-                background-color: #0f0f10;
-                padding: 80px 20px;
-                text-align: center;
-            }
-            /* Paste the CSS here */
-            #faqs h2 {
-                font-size: 2.8rem;
-                font-weight: 700;
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 15px;
-                position: relative;
-                display: inline-block;
-                padding-bottom: 10px;
-            }
-
-            /* Underline Effect */
-            #faqs h2::after {
-                content: "";
-                width: 60px;
-                height: 4px;
-                background: linear-gradient(90deg, #ff8c00, #ff3d00);
-                display: block;
-                margin: 8px auto 0;
-                border-radius: 2px;
-            }
-
-            /* Subtext */
-            #faqs p {
-                font-size: 1.2rem;
-                color: #b3b3b3;
-                text-align: center;
-                margin-top: 5px;
-            }
-
-            #faqs p {
-                font-size: 1.1rem;
-                color: #b3b3b3;
-            }
-
-            /* FAQ Container */
-            .faq-container {
-                max-width: 800px;
-                margin: 40px auto;
-            }
-
-            .faq-item {
-                background: linear-gradient(135deg, #222831, #1a1d25);
-                border-radius: 10px;
-                padding: 18px;
-                margin-bottom: 15px;
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .faq-item:hover {
-                transform: scale(1.02);
-                box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
-            }
-
-            .faq-item .faq-question {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: #ffffff;
-                font-size: 1.2rem;
-                font-weight: 500;
-            }
-
-            .faq-item .icon {
-                font-size: 1.5rem;
-                color: #b3b3b3;
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .faq-item .faq-answer {
-                max-height: 0;
-                overflow: hidden;
-                font-size: 1rem;
-                color: #d1d1d1;
-                line-height: 1.5;
-                transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-                padding: 0px 18px;
-            }
-
-            .faq-item.active .faq-answer {
-                max-height: 200px;
-                padding: 10px 18px;
-            }
-
-            .faq-item.active .icon {
-                transform: rotate(45deg);
-            }
-
-            .faq-item .faq-question {
-                font-size: 1.4rem; 
-                font-weight: 600;
-                color: #f1f1f1;
-            }
-
-            .social-container-unique {
-                background-color: #222831;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 10vh; /* Center vertically on the screen */
-                padding-bottom: 10px;
-            }
-
-            .social-link {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                font-size: 25px;
-                margin: 1px;
-            }
-
-            .social-link i {
-                margin-right: 8px; /* Space between icon and text */
-            }
-
-            .instagram {
-                color: #E4405F;
-            }
-
-            .linkedin {
-                color: #0077B5;
-            }
-        </style>
-
         <h3 class="text-4xl font-bold mb-6 text-white">Do You Have any questions about Hack With IoT?</h3>
         <p class="text-lg text-gray-400">Get to know what our audience is concerned about</p>
-
         <div class="mt-12 max-w-3xl mx-auto space-y-4">
-            <!-- FAQ Items -->
             <div class="faq-item">
                 <div class="faq-question">
                     <p>Can I cancel my participation before Hack With IoT begins?</p>
@@ -450,7 +523,6 @@
                 </div>
                 <div class="faq-answer">Cancellation is not allowed, but you can transfer your registration to another participant.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">
                     <p>What is Hack With IoT 2025?</p>
@@ -458,15 +530,13 @@
                 </div>
                 <div class="faq-answer">Hack With IoT 2025 is a technology and innovation event featuring hackathons, workshops, and networking opportunities for tech enthusiasts.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">
                     <p>Who can participate in Hack With IoT?</p>
                     <span class="icon">+</span>
                 </div>
-                <div class="faq-answer">Students and tech enthusiasts from technical backgrounds can participate.</div>
+                <div class="faq-answer">Students, professionals, and tech enthusiasts from all backgrounds can participate.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">
                     <p>What topics will be covered in the workshops?</p>
@@ -474,7 +544,6 @@
                 </div>
                 <div class="faq-answer">Workshops will cover web development, AI, cybersecurity, blockchain, and other emerging tech trends.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">
                     <p>What is the prize pool for the hackathon?</p>
@@ -482,7 +551,6 @@
                 </div>
                 <div class="faq-answer">The hackathon offers cash prizes, internships, and goodies for winners.</div>
             </div>
-
             <div class="faq-item">
                 <div class="faq-question">
                     <p>Do I need a team to participate in the hackathon?</p>
@@ -496,10 +564,7 @@
     <script>
         document.querySelectorAll(".faq-item").forEach(item => {
             item.addEventListener("click", () => {
-                // Toggle active class
                 item.classList.toggle("active");
-
-                // Close other open FAQs
                 document.querySelectorAll(".faq-item").forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains("active")) {
                         otherItem.classList.remove("active");
@@ -508,6 +573,68 @@
             });
         });
     </script>
+
+<section>
+    <script>
+        function toggleInfo(element) {
+            element.classList.toggle("active");
+        }
+    </script>
+
+    <div class="contacttt">
+    <h2>Person Contact</h2>
+</div>
+
+    <div class="container">
+        <div class="contact-box">
+            
+            <h3>Lead</h3>
+            <p><strong>Name:</strong> M.Varnini</p>
+            <p><strong>Email:</strong> 2200100057@kluniversity.in</p>
+            <p><strong>Contact:</strong></p>
+        </div>
+        <div class="contact-box">
+            <h3>Co-Lead 1</h3>
+            <p><strong>Name:</strong> Koppada Udaya Sai</p>
+            <p><strong>Email:</strong> 2200100018@kluniversity.in</p>
+            <p><strong>Contact:</strong>+91 9393099930</p>
+        </div>
+        <div class="contact-box">
+            <h3>Co-Lead 2</h3>
+            <p><strong>Name:</strong> B. Yogendra Varma</p>
+            <p><strong>Email:</strong> 2300100051@kluniversity.in</p>
+            <p><strong>Contact:</strong> +91 8977294942</p>
+        </div>
+    </div>
+
+<!--  Change This Accordingly
+    <div class="contacttt">
+    <h2>Person Contact</h2>
+</div>
+
+    <div class="container">
+        <div class="contact-box">
+            
+            <h3>Lead</h3>
+            <p><strong>Name:</strong> M.Varnini</p>
+            <p><strong>Email:</strong> 2200100057@kluniversity.in</p>
+            <p><strong>Contact:</strong></p>
+        </div>
+        <div class="contact-box">
+            <h3>Co-Lead 1</h3>
+            <p><strong>Name:</strong> Koppada Udaya Sai</p>
+            <p><strong>Email:</strong> 2200100018@kluniversity.in</p>
+            <p><strong>Contact:</strong>+91 9393099930</p>
+        </div>
+        <div class="contact-box">
+            <h3>Co-Lead 2</h3>
+            <p><strong>Name:</strong> B. Yogendra Varma</p>
+            <p><strong>Email:</strong> 2300100051@kluniversity.in</p>
+            <p><strong>Contact:</strong> +91 8977294942</p>
+        </div>
+</div>
+    -->
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-800">
@@ -524,7 +651,6 @@
         <a href="https://www.instagram.com/kl_iot?igsh=eW12Zndpa3N3eXMx" target="_blank" class="social-link instagram">
             <i class="fa-brands fa-instagram"></i> Instagram Profile
         </a>
-    
         <a href="https://www.linkedin.com/in/iot-klef-843b81294/" target="_blank" class="social-link linkedin">
             <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
         </a>
@@ -539,7 +665,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const scrollLinks = document.querySelectorAll(".scroll-link");
-
             scrollLinks.forEach(link => {
                 link.addEventListener("click", function(e) {
                     e.preventDefault();
@@ -548,20 +673,11 @@
                         behavior: "smooth",
                         block: "start"
                     });
-
-                    // Remove active class from all links
                     scrollLinks.forEach(item => item.classList.remove("active"));
                     this.classList.add("active");
                 });
             });
         });
-
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
     </script>
 
 </body>
