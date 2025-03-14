@@ -529,7 +529,15 @@
             color: #0077B5;
         }
 
-        
+        .navig h1
+        {
+            font-size: 1rem;
+        }
+        .navig img
+        {
+            height: 1.5rem;
+            
+        }
 
 
         .container 
@@ -608,6 +616,15 @@
         z-index: 20; 
         }
 
+        .hero h1
+        {
+            font-size: 2.5rem;
+        }
+        .hero p
+        {
+            font-size: 1.5rem;
+        }
+
         }
     </style>
 </head>
@@ -619,6 +636,7 @@
     </audio>
 
     <!-- Navigation -->
+     <div class="navig">
     <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 shadow-md navbar">
         <div class="flex items-center">
             <img src="iot.png" alt="Hackathon Logo" class="h-12 mr-4">
@@ -633,8 +651,10 @@
             <li><a href="#contact" class="scroll-link">Contact Us</a></li>
         </ul>
     </nav>
+</div>
 
     <!-- Hero Section -->
+     <div class="hero">
     <section class="relative h-screen flex flex-col justify-center items-center text-center px-12">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
             <source src="back5.mp4" type="video/mp4">
@@ -655,6 +675,7 @@
             <div id="countdown" class="bg-gray-800 bg-opacity-85 text-white p-4 rounded-lg shadow-lg mb-6"></div>
         </div>
     </section>
+</div>
     
     
         <script>
