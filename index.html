@@ -678,33 +678,32 @@
 </div>
     
     
-        <script>
-            // Set the event date (10 days from now)
-            const eventDate = new Date();
-            eventDate.setDate(eventDate.getDate() + 15);
-    
-            function updateCountdown() {
-                const now = new Date();
-                const timeLeft = eventDate - now;
-    
-                if (timeLeft <= 0) {
-                    document.getElementById("countdown").innerHTML = "Event Started!";
-                    clearInterval(timer);
-                    return;
-                }
-    
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-                document.getElementById("countdown").innerHTML = 
-                    `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            }
-    
-            const timer = setInterval(updateCountdown, 1000);
-            updateCountdown();
-        </script>
+       <script>
+    // Set the event date and time for March 28, 2025, at 8:00 AM
+    const eventDate = new Date("March 28, 2025 08:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
+
+        if (timeLeft <= 0) {
+            document.getElementById("countdown").innerHTML = "Event Started!";
+            clearInterval(timer);
+            return;
+        }
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
 
     
 
